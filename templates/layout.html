@@ -1,0 +1,66 @@
+<!--
+    COURSE CODE:        COMP3340-95-R-2023S
+    GROUP NO:           3 (SYNAPSO)
+    MEMBERS:            Ian Trepanier, Luke Mullins, Daniel Chiarcos
+    DATE OF SUBMISSION: AUG. 2ND, 2023
+    PROFESSOR:          Dr. Majid Afshar
+-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!--Link main CSS sheet-->
+    <link rel="stylesheet" href="{{url_for('static', filename='styles2.css')}}" />
+    <!--DIN Font Style-->
+    <link href="https://use.typekit.net/ruf6eee.css" rel="stylesheet">
+
+    <!--Favicon image-->
+    <link rel="icon" href="{{url_for('static', filename='images/favicon.svg')}}" type="image/svg+xml">
+    <title>Synapso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Link to JS sheet-->
+    <script src="{{url_for('static', filename='script.js')}}" defer></script>
+</head>
+
+<body onload="flashMessage()">
+    <header class="nav-bar">
+
+        <label id="logo"> synapso.</label>
+
+        <nav>
+            <ul>
+                
+                <li class = "welcome-user">Welcome, {{ session['username'] }}</li> 
+                <li><a href="{{url_for('logout')}}">Logout</a></li>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('flash')}}">Tools</a></li>
+                <li><a href="{{url_for('pricing')}}">Pricing</a></li>
+                <li class="cartImg"><a href="{{url_for('cart')}}"><img src="{{url_for('static', filename='images/cart.png')}}" alt="Cart"> ({{ cart|length }})</a></li>
+            </ul>
+        </nav>
+
+        <div id="nav-icon" onclick="changeNav(this)">
+
+            <div class="bar-one"></div>
+            <div class="bar-two"></div>
+            <div class="bar-three"></div>
+
+            <ul class="dropdown-menu">
+                <li><a href="{{url_for('logout')}}">Logout</a></li>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('flash')}}">Tools</a></li>
+                <li><a href="{{url_for('pricing')}}">Pricing</a></li>
+                <li class="cartImg"><a href="{{url_for('cart')}}"><img src="{{url_for('static', filename='images/cart.png')}}" alt="Cart"> ({{ cart|length }})</a></li>
+            </ul>
+        </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+</body>
+
+</html>

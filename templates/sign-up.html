@@ -1,0 +1,59 @@
+<!--
+    COURSE CODE:        COMP3340-95-R-2023S
+    GROUP NO:           3 (SYNAPSO)
+    MEMBERS:            Ian Trepanier, Luke Mullins, Daniel Chiarcos
+    DATE OF SUBMISSION: AUG. 2ND, 2023
+    PROFESSOR:          Dr. Majid Afshar
+-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!--Link main CSS sheet-->
+    <link rel="stylesheet" href="{{url_for('static', filename='styles2.css')}}" />
+    <!--DIN Font Style-->
+    <link href="https://use.typekit.net/ruf6eee.css" rel="stylesheet">
+
+    <!--Favicon image-->
+    <link rel="icon" href="{{url_for('static', filename='images/favicon.svg')}}" type="image/svg+xml">
+    <title>Synapso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Link to JS sheet-->
+    <script src="{{url_for('static', filename='script.js')}}" defer></script>
+</head>
+<body>
+    <div class="body-padding">
+        <div class="under-development-heading">
+            <h1>Sign up</h1>
+        </div>
+
+        {% if message %}
+            
+           <p class = "error-mes">{{ message }}</p> 
+            
+        {% endif %}
+    
+        <div>
+            <div class="box outline">
+                <div class="under-development-text">
+    
+                    <form method = "POST" action = "">
+                        {{ form.hidden_tag() }}
+                        Username: {{ form.email }}
+                        Password: {{ form.password }}
+                        <br>
+                        {{ form.submit }}
+                    </form>
+
+                    <div>
+
+                        Already have an account? Log in <a href= "{{url_for('login')}}">here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>

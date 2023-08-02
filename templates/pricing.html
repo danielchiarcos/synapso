@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="body-padding"> <!-- 3.0 line added-->
+    <div class="center">
+
+        <div>
+            <h1>pricing.</h1>
+        </div>
+
+        <div class="pricing">
+            <div class="free box">
+                <h3>free</h3>
+                <p>enjoy our free features with a daily limit.</p>
+
+                <ul>
+                    <li>flashcard creation (limit: 10 daily cards)</li>
+                    <li>pomodoro study session (limit: 1 daily session)</li>
+                </ul>
+            </div>
+
+            <div>
+                {% for item in items %}
+
+                {% set css = 'product' + loop.index|string %}
+                <div class="deluxe box {{ css }}">
+                    <h3>{{ item['name'] }}</h3>
+                    <h4>${{ item['price'] }}</h4>
+                    <p>{{ item['description'] }}</p>
+                    <ul>
+                        <li>{{ item['tool1'] }}</li>
+                        <li>{{ item['tool2'] }}</li>
+                        <li>{{ item['tool3'] }}</li>
+                        <li>{{ item['tool4'] }}</li>
+                    </ul>
+
+                    <a href="{{ url_for('addcart', item_index=loop.index0) }}">add to cart</a>
+                </div>
+
+                {% endfor %}
+            </div>
+
+
+        </div>
+    </div>
+</div> <!-- 3.0 line added-->
+
+{% endblock %}

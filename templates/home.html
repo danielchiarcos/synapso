@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="body-padding"> <!-- 3.0 line added-->
+    <div class="center">
+        <div class="container">
+            <div class="text">
+                <h1>synapso.</h1>
+                <h2>flashcards and study tools designed with humans in mind.</h2>
+            </div>
+            <div class="image">
+                <img src="{{url_for('static', filename='images/slide_1.svg')}}" alt="Image" class="slide">
+            </div>
+        </div>
+        {% for message in get_flashed_messages()%}
+            {{messages}}
+        {% endfor %}
+
+        <div class="study">
+            <div>
+                <h1>study tools</h1>
+            </div>
+        </div>
+
+        <div class="products">
+            <div class="flash box">
+                <div class="text">
+                    <h3>flashcards</h3>
+                    <p>flashcards and study materials designed with humans in mind.</p>
+                </div>
+                <div class="product-img">
+                    <img src="{{url_for('static', filename='images/flash.svg')}}" alt="Image" class="prod">
+                </div>
+
+            </div>
+            <div class="pomo box">
+                <h3>pomodoro</h3>
+                <p>create intuitive and highly customizable pomodoros, allowing you to level up your workflows.</p>
+                <div class="product-img">
+                    <img src="{{url_for('static', filename='images/pomo.svg')}}" alt="Image" class="prod">
+                </div>
+            </div>
+            <div class="cal box">
+                <h3>calendar</h3>
+                <p>organize your flash cards, pomodoros, and objectives to ensure an optimal study strategy.</p>
+                <div class="product-img">
+                    <img src="{{url_for('static', filename='images/cal.svg')}}" alt="Image" class="prod">
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <!-- 3.0 line added-->
+
+{% endblock %}

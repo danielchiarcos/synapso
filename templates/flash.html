@@ -1,0 +1,75 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="body-padding">
+    <h1>Add Topic</h1>
+
+    <form action="/add-topic" method="post">
+        <input type="text" id="topic" name="topic" class="form-control" placeholder="topic" />
+        <button type="submit">Save</button>
+    </form>
+
+    <h1>Add Question</h1>
+    <form action="/add" method="post">
+        <select id="topic_id" name="topic_id" placeholder="topic_id">
+            <option value="" disabled selected>topic name</option>
+            {% for topic in topic_list %}
+                <option>{{ topic.topic }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" id="question" name="question" class="form-control" placeholder="question" />
+        <input type="text" id="answer" name="answer" class="form-control" placeholder="answer" />
+        <button type="submit">Save</button>
+    </form>
+    <h1>Edit Question</h1>
+    <form action="/edit" method="post">
+        <select id="id" name="id" placeholder="id">
+            <option value="" disabled selected>Select your option</option>
+            {% for flash in flash_list %}
+                <option>{{ flash.id }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" id="question2" name="question2" class="form-control" placeholder="question" />
+        <input type="text" id="answer2" name="answer2" class="form-control" placeholder="answer" />
+        <button type="submit">Update</button>
+    </form>
+
+
+    
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Deck</th>
+                <th scope="col">Question</th>
+                <th scope="col">Answer</th>
+                <th scope="col">Ranking</th>
+                <th scope="col">Knowledge</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for flash in flash_list %}
+            <tr>
+                <td scope="row">{{flash.id }}</td>
+                <td>{{ flash.topic_id }}</td>
+                <td>{{ flash.question }}</td>
+                <td>{{ flash.answer }}</td>
+                <td>{{ flash.rating }}</td>
+                <td>
+                    <a href="/update_res/{{ flash.id }}">Reset</a>
+                </td>
+                <td>
+                    <a href="/delete/{{ flash.id }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+
+    <div>
+        <a class = "home-buttons" href = "{{url_for('study')}}">study</a> <!-- 9.0 added link-->
+    </div>
+</div>
+
+{% endblock %}

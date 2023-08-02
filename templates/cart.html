@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+<div class="body-padding">
+    <div class="center">
+
+        <h1>shopping cart.</h1>
+
+        <div class="cart box">
+
+            <div class="cart-header">
+                <h3 class="heading">Your Cart</h3>
+                <form method="GET" action="{{ url_for('clear') }}">
+                    <button id="clear" type="submit">Clear Cart</button>
+                </form>
+            </div>
+
+            <ul>
+                {% for item in cart %}
+                <li>{{ item.name }} - ${{ item.price }}</li>
+                {% endfor %}
+            </ul>
+
+            <a class="checkout">Checkout</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

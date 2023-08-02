@@ -1,0 +1,37 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="body-padding">
+  
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Deck</th>
+                <th scope="col">Question</th>
+                <th scope="col">Answer</th>
+                <th scope="col">Ranking</th>
+                <th scope="col">Knowledge</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for flash in flash_list %}
+            <tr>
+                <td scope="row">{{flash.id }}</td>
+                <td>{{ flash.topic_id }}</td>
+                <td>{{ flash.question }}</td>
+                <td class="answer">{{ flash.answer }}</td>
+                <td>{{ flash.rating }}</td>
+                <td>
+                    <a href="/update/{{ flash.id }}/{{ 10 }}">Easy</a>
+                    <a href="/update/{{ flash.id }}/{{ 5 }}">Mediocre</a>
+                    <a href="/update/{{ flash.id }}/{{ 2 }}">Difficult</a>
+                    <a href="/update_neg/{{ flash.id }}/{{ 4 }}">Again</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

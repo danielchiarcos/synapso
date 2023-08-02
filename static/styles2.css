@@ -1,0 +1,508 @@
+/*
+    COURSE CODE:        COMP3340-95-R-2023S
+    GROUP NO:           3 (SYNAPSO)
+    MEMBERS:            Ian Trepanier, Luke Mullins, Daniel Chiarcos
+    DATE OF SUBMISSION: AUG. 2ND, 2023
+    PROFESSOR:          Dr. Majid Afshar
+*/
+
+* {
+    padding: 0;
+    /* new */
+    margin: 0;
+    /* new */
+    font-family: "din-2014", sans-serif;
+    color: rgb(54, 54, 54);
+
+}
+
+/* New code */
+
+header a {
+    text-decoration: none;
+}
+
+header {
+    background-color: #074763;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+#logo {
+    color: white;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-bar nav ul li {
+    margin: 0 10px;
+    display: inline-block;
+    line-height: 80px;
+}
+
+.nav-bar nav ul li a {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.welcome-user{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+.nav-bar a:hover {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+}
+
+.nav-bar a:hover {
+    color: black;
+    font-weight: bold;
+    background-color: white;
+}
+
+.cartImg img {
+    width: 20px;
+}
+
+.cartImg a:hover {
+    color: white;
+    background-color: black;
+    -webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+#nav-icon {
+    margin: auto 0;
+    display: none;
+
+    cursor: pointer;
+}
+
+#nav-icon div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px;
+    transition: .5s;
+}
+
+.click .bar-one {
+    transform: translate(0px, 5px);
+}
+
+.click .bar-three {
+    transform: translate(0px, -5px);
+}
+
+.click .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: none;
+    background-color: #074763;
+    top: 82px;
+    left: 0;
+    width: 100%;
+}
+
+.dropdown-menu li {
+    list-style: none;
+    padding: 10px;
+}
+
+.dropdown-menu li a {
+    color: white;
+    font-weight: bold;
+    font-family: Tahoma;
+    font-size: 18px;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+/* End of new code */
+
+
+.container {
+    display: flex;
+}
+
+.image {
+    flex: 1;
+
+}
+
+.text {
+    flex: 1;
+}
+
+.slide {
+    max-height: 300px;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+    max-width: 75%;
+    font-size: 2em;
+}
+
+
+button {
+    margin-top: 1em;
+}
+
+
+/* Add a media query for mobile devices */
+@media (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .image {
+        order: -1;
+        max-width: 100%;
+    }
+
+    .slide {
+        max-height: none;
+    }
+}
+
+.products {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+
+}
+
+.flash {
+    background-color: #ececec;
+}
+
+.pomo {
+    background-color: #c9c9c9;
+}
+
+.cal {
+    background-color: #b3b3b3;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 2em;
+}
+
+.prod {
+    max-height: 150px;
+}
+
+footer {
+    background-color: grey;
+}
+
+
+.flex {
+    display: flex;
+}
+
+@media (min-width: 1000px) {
+    .container {
+        max-width: 1000px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box {
+        max-width: 1000px;
+    }
+}
+
+/* New code */
+@media only screen and (max-width: 600px) {
+    header nav {
+        display: none;
+    }
+
+    #nav-icon {
+        display: block;
+    }
+}
+
+/*Version 3.0 Edits start*/
+.outline{
+    display: flex;
+    align-content: center;
+    border-radius: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+    max-width: 400px;
+    border: 3px solid #074763;
+}
+
+.under-development-heading
+{
+    margin-top: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.under-development-text
+{
+    text-align: center;
+    font-size: 24px;
+    padding: 1em;
+}
+
+.body-padding{
+    margin-left: 1em;
+    margin-right: 1em;
+}
+/*Version 3.0 Edits ends*/
+
+
+/*Version 4.0 Edits start*/
+.pricing {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+
+}
+
+.pricing ul {
+    list-style: '- ';
+    margin: .5em 2em;
+}
+
+.free {
+    background-color: #ececec;
+}
+
+.product1 {
+    background-color: #c9c9c9;
+    margin-bottom: 1em;
+}
+
+.product2 {
+    background-color: #b3b3b3;
+}
+
+.pricing a {
+    margin: 0 auto;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #074763;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    width: 10em;
+    padding: 6px 0;
+}
+
+.pricing a:hover {
+    background-color: white;
+    color: #074763;
+}
+
+.premium {
+    background-color: #c9c9c9;
+}
+
+.deluxe {
+    background-color: #b3b3b3;
+}
+
+.add-cart {
+    display: flex;
+    margin: auto;
+}
+
+.add-cart button {
+    background-color: #074763;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    width: 10em;
+    padding: 6px 0;
+}
+
+/*Version 5.0 Edits start*/
+
+.cart {
+    background-color: #ececec;
+}
+
+.cart-header {
+    margin: auto;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 700;
+    color: #2F3841;
+}
+
+#clear {
+    font-weight: bold;
+    background-color: rgb(255, 79, 79);
+    color: white;
+    padding: 4px;
+    border-radius: 8px;
+}
+
+.checkout {
+    text-align: center;
+    font-weight: bold;
+    background-color: #074763;
+    color: white;
+    padding: 4px;
+    border-radius: 8px;
+    margin-top: 1.5em;
+    border-style: solid;
+}
+
+.cart a:hover {
+    background-color: white;
+    color: #074763;
+    border-style: solid;
+}
+
+.cart ul li {
+    list-style: none;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 20px 100px;
+}
+
+.action {
+    font-size: 14px;
+    font-family: ‘Open Sans’;
+    font-weight: bold;
+    color: #E44C4C;
+    cursor: pointer;
+    border-bottom: 1px solid #E44C4C;
+}
+
+.premium-box {
+    background-color: #c9c9c9;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 2em;
+}
+
+.deluxe-box {
+    background-color: #b3b3b3;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    padding: 2em;
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+}
+
+.styled-table thead tr {
+    background-color: #074763;
+    color: #ffffff;
+    text-align: left;
+}
+
+th {
+    color: white;
+}
+
+td {
+    padding-right: 5em;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #074763;
+}
+
+/*Version 4.0 Edits end */
+
+.home-buttons{
+    padding: 6px;
+    border-radius:8px;
+    margin: 5px;
+    background-color: #074763;
+    color: white;
+    text-decoration: none;
+    width: 60px;
+    text-align: center;
+}
+
+.home-buttons:hover{
+    background-color: white;
+    color: black;
+    border: 2px solid #074763;
+    transition-duration: 0.5s;
+}
+
+.index-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.error-mes{
+    padding-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+}

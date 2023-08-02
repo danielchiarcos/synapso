@@ -1,0 +1,40 @@
+<!--
+    COURSE CODE:        COMP3340-95-R-2023S
+    GROUP NO:           3 (SYNAPSO)
+    MEMBERS:            Ian Trepanier, Luke Mullins, Daniel Chiarcos
+    DATE OF SUBMISSION: AUG. 2ND, 2023
+    PROFESSOR:          Dr. Majid Afshar
+-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <!--Link main CSS sheet-->
+    <link rel="stylesheet" href="{{url_for('static', filename='styles2.css')}}" />
+    <!--DIN Font Style-->
+    <link href="https://use.typekit.net/ruf6eee.css" rel="stylesheet">
+
+    <!--Favicon image-->
+    <link rel="icon" href="{{url_for('static', filename='images/favicon.svg')}}" type="image/svg+xml">
+    <title>Synapso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Link to JS sheet-->
+    <script src="{{url_for('static', filename='script.js')}}" defer></script>
+</head>
+<body> 
+    <div class="body-padding"> <!-- 3.0 line added-->
+            <div class="text index-container">
+                <h1>synapso.</h1>
+                <h2>flashcards and study tools designed with humans in mind.</h2>
+            </div>
+            <div class="image index-container box outline">
+                <img src="{{url_for('static', filename='images/slide_1.svg')}}" alt="Image" class="slide">
+            </div>
+            <div class = "button-container">
+                <a class = "home-buttons" href = "{{url_for('login')}}">log in</a> <!-- 9.0 added link-->
+                <a class = "home-buttons" href = "{{url_for('signup')}}">sign up</a> <!-- 9.0 added link-->
+            </div>
+    </div> <!-- 3.0 line added-->
+</body>
